@@ -1,7 +1,10 @@
+import { Outlet, useLoaderData } from "react-router-dom";
 import Banner from "../components/Banner";
+import Categories from "../components/Categories";
 import Heading from "../components/Heading";
 
 export default function Home() {
+    const categories = useLoaderData();
   return (
     <div>
       {/* banner */}
@@ -12,18 +15,9 @@ export default function Home() {
         subtittle="Choose your desired coffee category to browse through specific coffees that fit in your taste."
       />
       {/* categories tab section */}
-      <div role="tablist" className="tabs tabs-lifted">
-        <a role="tab" className="tab">
-          Tab 1
-        </a>
-        <a role="tab" className="tab tab-active">
-          Tab 2
-        </a>
-        <a role="tab" className="tab">
-          Tab 3
-        </a>
-      </div>
+      <Categories categories={categories} />
       {/* dynamic nested components */}
+      <Outlet />
     </div>
   );
 }
