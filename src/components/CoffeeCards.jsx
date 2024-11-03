@@ -26,7 +26,7 @@ export default function CoffeeCards() {
             coffees.map(coffee => <Card key={coffee.id} coffee={coffee} />)
         }
     </div>
-    <button className="btn btn-warning" onClick={()=>setCoffees(allCoffees)}>View All</button>
+    <button className="btn btn-warning" onClick={()=>navigate('/coffees')}>View All</button>
     </>
   )
 }
