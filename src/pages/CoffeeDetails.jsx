@@ -26,7 +26,6 @@ export default function CoffeeDetails() {
 
   const favorites = getAllFavorites();
   const isExist = favorites.find((favorite)=> favorite.id === parseInt(id));
-  console.log(isExist);
   useEffect(()=>{
     if(isExist) setIsFavorite(true)
   },[isExist])
