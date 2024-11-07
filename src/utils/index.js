@@ -16,7 +16,7 @@ const addFavorite = coffee => {
     //get all previously saved coffee data
     const favorites = getAllFavorites();
     const isExist = favorites.find((favorite)=> favorite.id === coffee.id);
-    if(isExist) return toast.error('Allready Exist!');; 
+    if(isExist) return toast.error('Allready Exist!');
     favorites.push(coffee);
     localStorage.setItem('favorites',JSON.stringify(favorites));
     toast.success('Successfully Removed');
